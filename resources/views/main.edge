@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Adonis</title>
+   {{style('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')}}
+   {{style('style')}}
+</head>
+<body>
+  @include('partials.navber')
+ <div class="container">
+   @!section('content')
+ </div>
+  
+  {{script('https://code.jquery.com/jquery-3.3.1.slim.min.js')}}
+  {{script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')}}
+  {{script('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')}}
+</body>
+</html>

@@ -1,0 +1,15 @@
+@layout('main')
+@section('content')
+<h2>{{ title}}</h2>
+<div class="row">
+    <div class="col-md-8">
+        <p>This is Latest Posts</p>
+        <ul>
+            @each(item in posts)
+              <li class="titleHeaders" >{{item.title}}</li>
+            @endeach
+        </ul>
+    </div>
+</div>
+  
+@endsection
