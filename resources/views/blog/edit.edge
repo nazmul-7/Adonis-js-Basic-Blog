@@ -1,0 +1,23 @@
+@layout('main')
+
+@section('content')
+    <div class="col-md-4">
+        <form action="{{ '/posts/'+post.id+'?_method=PUT' }}" method="post" >
+                {{ csrfField() }}
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail4">Title</label>
+                    <input type="text" class="form-control" id="inputEmail4" name="title" value="{{ post.title }}">
+                    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('title'), hasErrorFor('title')) }}
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="inputPassword4">Content</label>
+                    <textarea type="text" class="form-control" id="inputPassword4" name="body" placeholder="">{{ post.body }}</textarea>
+                    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('body'), hasErrorFor('body')) }}
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+    </div>
+  
+@endsection

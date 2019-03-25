@@ -1,14 +1,21 @@
 @layout('main')
 @section('content')
 <h2>{{ title}}</h2>
+@include('./partials.successMsg')
+@include('./partials.infoMsg')
 <div class="row">
     <div class="col-md-8">
         <p>This is Latest Posts</p>
         <ul>
             @each(item in posts)
-              <li class="titleHeaders" >{{item.title}}</li>
+              <li class="titleHeaders" >
+                  <a href="/posts/{{item.id}}">{{item.title}}</a>
+                  </li>
             @endeach
         </ul>
+    </div>
+    <div class="col-md-4">
+            <a class="Custom_btn" href="/posts"><button class="btn btn-success  ">Add Post</button></a>
     </div>
 </div>
   

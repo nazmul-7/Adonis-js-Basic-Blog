@@ -1,0 +1,25 @@
+@layout('main')
+
+@section('content')
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.body}}</p>
+                <a href="/posts/edit/{{post.id}}"><button class="btn btn-warning">Edit</button></a>
+                <form action="{{'/posts/'+post.id+'?_method=delete'}}" method="post">
+                    {{ csrfField() }}
+                    <button class="btn btn-danger" type="submit" >Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   <!-- <div class="col-md-6">
+        <a href="/posts/edit/{{post.id}}"><button class="btn btn-warning">Edit</button></a>
+        
+        <form action="/posts" method="delete"></form> 
+    </div>-->
+</div>
+
+@endsection

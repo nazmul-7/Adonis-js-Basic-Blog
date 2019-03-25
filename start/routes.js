@@ -17,5 +17,11 @@
 const Route = use('Route')
 
 Route.get('/','PostController.index')
+Route.get('/posts/:id','PostController.show')
+Route.get('/posts','PostController.create')
+Route.get('/posts/edit/:id','PostController.edit')
+Route.post('/posts','PostController.store')
+Route.put('/posts/:id','PostController.update')
+Route.delete('posts/:id','PostController.destroy')
 
 // Route.on('/').render('blog.index')
